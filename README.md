@@ -60,6 +60,7 @@ portfolio/
 │   │   │   └── index.css
 │   │   ├── App.jsx             # Lazy loads all sections
 │   │   └── main.jsx
+│   ├── .env
 │   ├── index.html
 │   ├── vite.config.js          # Proxy to backend, code splitting
 │   ├── tailwind.config.js
