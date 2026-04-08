@@ -27,8 +27,8 @@ app.use(
 app.use(express.json({ limit: '10kb' })) // Limit body size
 
 // HTTP request logger (only in development)
-if (process.env.NODE_ENV === 'development') {
-  app.use(morgan('dev'))
+if (process.env.NODE_ENV === "production") {
+  app.use(morgan("dev"));
 }
 
 // ─── Routes ─────────────────────────────────────────────────────────────────
@@ -55,5 +55,5 @@ app.use((err, req, res, next) => {
 app.listen(PORT, () => {
   console.log(`\n🚀 Server running on http://localhost:${PORT}`)
   console.log(`📧 Email: ${process.env.EMAIL_USER || 'not configured'}`)
-  console.log(`🌍 Env: ${process.env.NODE_ENV || 'development'}\n`)
+  console.log(`🌍 Env: ${process.env.NODE_ENV || "production"}\n`);
 })
