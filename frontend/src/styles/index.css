@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+
+  body {
+    background-color: #141414;
+    color: #e5e5e5;
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #141414;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #E50914;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b81d24;
+  }
+}
+
+@layer components {
+  .section-title {
+    @apply font-sans text-4xl md:text-5xl text-white tracking-widest uppercase mb-2;
+  }
+
+  .section-subtitle {
+    @apply font-body text-netflix-gray text-sm tracking-widest uppercase mb-10;
+  }
+
+  .btn-primary {
+    @apply bg-accent text-white font-body font-medium px-6 py-3 rounded hover:bg-red-700 transition-all duration-300 hover:scale-105 active:scale-95;
+  }
+
+  .btn-outline {
+    @apply border border-white/40 text-white font-body font-medium px-6 py-3 rounded hover:bg-white/10 transition-all duration-300 hover:scale-105 active:scale-95;
+  }
+
+  /* Skeleton Loader */
+  .skeleton {
+    background: linear-gradient(90deg, #1f1f1f 25%, #2a2a2a 50%, #1f1f1f 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  /* Horizontal scroll container */
+  .scroll-container {
+    @apply flex gap-4 overflow-x-auto pb-4;
+    scrollbar-width: thin;
+    scrollbar-color: #E50914 #1f1f1f;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .scroll-container::-webkit-scrollbar {
+    height: 4px;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #E50914, #ff6b6b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    /* backdrop-filter: blur(10px); */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .netflix-shadow {
+    box-shadow: 0 8px 32px rgba(229, 9, 20, 0.15);
+  }
+}
+
+/* Framer Motion Optimization */
+.will-animate {
+  will-change: transform, opacity;
+}
