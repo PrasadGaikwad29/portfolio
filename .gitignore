@@ -4,7 +4,9 @@ node_modules/
 
 # Environment Variables — NEVER commit these
 .env
+.env.local        ✅ ADD THIS
 */.env
+*/.env.local      ✅ ADD THIS
 backend/.env
 
 # Build output
