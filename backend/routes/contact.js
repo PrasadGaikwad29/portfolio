@@ -8,12 +8,19 @@ const {
 
 const router = express.Router();
 
-// ✅ Increased limit for testing
+// ✅ Production-safe limiter
 const contactLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 100,
+  windowMs: 15 * 60 * 1000, // 15 mins
+  max: 5, // max 5 requests per IP
+  message: {
+    success: false,
+    message: "Too many requests. Try again after 15 minutes.",
+  },
+  standardHeaders: true,
+  legacyHeaders: false,
 });
 
+// ✅ Apply limiter BEFORE controller
 router.post(
   "/",
   contactLimiter,

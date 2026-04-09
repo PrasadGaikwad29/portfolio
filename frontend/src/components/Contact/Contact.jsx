@@ -8,7 +8,6 @@ import toast from "react-hot-toast";
 
 const initialForm = { name: "", email: "", message: "" };
 
-// ✅ ADD THIS LINE
 const BASE_URL = import.meta.env.VITE_API_URL;
 
 const contactItems = [
@@ -89,14 +88,15 @@ function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (loading) return; // ✅ prevent multiple clicks
+
     const errors = validate();
     if (Object.keys(errors).length) return setFormErrors(errors);
 
     try {
       dispatch({ type: "contact/loading" });
 
-      // ❌ OLD: http://localhost:5000/api/contact
-      // ✅ NEW:
       const res = await fetch(`${BASE_URL}/api/contact`, {
         method: "POST",
         headers: {
@@ -113,13 +113,13 @@ function Contact() {
       toast.success("Email sent successfully!");
 
       setForm(initialForm);
-
-      setTimeout(() => {
-        dispatch({ type: "contact/reset" });
-      }, 3000);
     } catch (err) {
       toast.error(err.message);
       dispatch({ type: "contact/error", payload: err.message });
+    } finally {
+      setTimeout(() => {
+        dispatch({ type: "contact/reset" });
+      }, 2000);
     }
   };
 
@@ -215,7 +215,13 @@ function Contact() {
                   <p className="text-red-400 text-xs">{formErrors.message}</p>
                 )}
 
-                <button className="w-full btn-primary" disabled={loading}>
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className={`w-full btn-primary ${
+                    loading ? "opacity-60 cursor-not-allowed" : ""
+                  }`}
+                >
                   {loading ? "Sending..." : "Send Message"}
                 </button>
 
