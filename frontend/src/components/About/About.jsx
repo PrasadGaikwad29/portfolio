@@ -35,10 +35,7 @@ function About() {
         >
           {/* Left — Text */}
           <div>
-            <motion.p
-              variants={itemVariants}
-              className="section-subtitle"
-            >
+            <motion.p variants={itemVariants} className="section-subtitle">
               Get to know me
             </motion.p>
             <motion.h2 variants={itemVariants} className="section-title">
@@ -99,7 +96,7 @@ function About() {
             </motion.div>
             <motion.div variants={itemVariants} className="mt-8 flex gap-4">
               <a
-                href="https://onedrive.live.com/?viewid=1d8f2b9c%2Db817%2D49cf%2D917c%2D99ac7a0bbd42&username=prasadgaikwad099%40gmail%2Ecom&id=%2Fpersonal%2F1f26b2f43d4ecf63%2FDocuments%2FPrasadGaikwadResume%2Epdf&parent=%2Fpersonal%2F1f26b2f43d4ecf63%2FDocuments"
+                href="https://onedrive.live.com/?viewid=1d8f2b9c%2Db817%2D49cf%2D917c%2D99ac7a0bbd42&username=prasadgaikwad099%40gmail%2Ecom&id=%2Fpersonal%2F1f26b2f43d4ecf63%2FDocuments%2FPrasad%20Gaikwad%20%2D%20Full%20Stack%20Developer%2Epdf&parent=%2Fpersonal%2F1f26b2f43d4ecf63%2FDocuments"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
