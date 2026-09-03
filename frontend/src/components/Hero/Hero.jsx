@@ -86,7 +86,7 @@ function Hero() {
           >
             Building scalable, production-ready web applications with{" "}
             <span className="text-white font-medium">
-              MongoDB · Express · React · Node
+              MongoDB · Express · React · Node · Next · Angular · Vue 
             </span>
           </motion.p>
 
@@ -107,7 +107,7 @@ function Hero() {
               <span>▶</span> View Projects
             </button>
             <a
-              href="https://onedrive.live.com/?viewid=1d8f2b9c%2Db817%2D49cf%2D917c%2D99ac7a0bbd42&username=prasadgaikwad099%40gmail%2Ecom&id=%2Fpersonal%2F1f26b2f43d4ecf63%2FDocuments%2FPrasad%20Gaikwad%20%2D%20Full%20Stack%20Developer%2Epdf&parent=%2Fpersonal%2F1f26b2f43d4ecf63%2FDocuments"
+              href="https://drive.google.com/file/d/14i9wuhWwxvmuRnhqrS9PIx8vGsvNiDtW/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline text-base"
@@ -123,7 +123,7 @@ function Hero() {
           >
             {[
               { value: "15+", label: "Projects Built" },
-              { value: "2+", label: "Year Experience" },
+              { value: "2.5+", label: "Year Experience" },
               { value: "10+", label: "Technologies" },
             ].map((stat) => (
               <div key={stat.label}>

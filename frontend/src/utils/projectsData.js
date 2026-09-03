@@ -7,6 +7,7 @@ import devdetective from "../assets/devdetective.png";
 import ecomzy from "../assets/ecomzy.png";
 import courses from "../assets/courses.png";
 import medium from "../assets/medium.png";
+import chitchat from "../assets/chitchat.png";
 
 export const mainProjects = [
   {
@@ -41,6 +42,17 @@ export const mainProjects = [
   },
   {
     id: 3,
+    title: "ChitChat",
+    description:
+      "Built a complete MERN chat application from scratch to strengthen my understanding of real-time communication, authentication, and full-stack architecture. The project includes Socket.IO-powered messaging, JWT-based login and protected routes, MongoDB schema design for users and conversations, and a responsive Vite + React frontend designed for practical communication workflows.",
+    image: chitchat,
+    techStack: ["React", "Node.js", "Socket.IO", "Express", "MongoDB", "JWT"],
+    liveUrl: "https://chit-chat-eta-ten.vercel.app/login",
+    githubUrl: "https://github.com/PrasadGaikwad29/chit-chat",
+    featured: true,
+  },
+  {
+    id: 4,
     title: "Razorpay",
     description:
       "Engineered a responsive frontend clone of a payment gateway with a focus on UI accuracy, reusable components, and smooth user interaction flows resembling real-world checkout systems.",
@@ -51,7 +63,7 @@ export const mainProjects = [
     featured: false,
   },
   {
-    id: 4,
+    id: 5,
     title: "Discord",
     description:
       "Built a scalable chat application UI with channel-based navigation and modular components. Focused on responsive design patterns and clean architecture for real-time app simulation.",
@@ -91,6 +103,17 @@ export const miniProjects = [
   },
   {
     id: 7,
+    title: "Medium",
+    description:
+      "Developed a Medium-inspired blogging UI with Redux-based state management and API integration, focusing on clean content rendering and user interaction flows.",
+    image: medium,
+    techStack: ["React", "Redux", "Open Trivia API"],
+    liveUrl: "https://medium-psi-indol.vercel.app/",
+    githubUrl: "https://github.com/PrasadGaikwad29/medium",
+  },
+
+  {
+    id: 8,
     title: "Ecomzy",
     description:
       "Built an e-commerce frontend with product listing, cart functionality, and state management, focusing on user experience and scalable component design.",
@@ -101,16 +124,6 @@ export const miniProjects = [
   },
   {
     id: 9,
-    title: "Medium",
-    description:
-      "Developed a Medium-inspired blogging UI with Redux-based state management and API integration, focusing on clean content rendering and user interaction flows.",
-    image: medium,
-    techStack: ["React", "Redux", "Open Trivia API"],
-    liveUrl: "https://medium-psi-indol.vercel.app/",
-    githubUrl: "https://github.com/PrasadGaikwad29/medium",
-  },
-  {
-    id: 8,
     title: "Courses",
     description:
       "Designed a course management dashboard enabling structured content organization for students and instructors with a focus on usability and responsive layouts.",

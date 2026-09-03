@@ -1,12 +1,28 @@
-import React, { memo } from 'react'
-import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
-import { useSectionObserver } from '../../hooks/useSectionObserver'
+import React, { memo } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { FaAws } from "react-icons/fa";
+import { useSectionObserver } from "../../hooks/useSectionObserver";
 import {
-  SiReact, SiNextdotjs, SiTailwindcss, SiTypescript, SiJavascript,
-  SiNodedotjs, SiExpress, SiMongodb, SiRedis,
-  SiGit, SiDocker, SiPostman, SiVercel, SiGithub, SiMysql, SiRender,
-} from 'react-icons/si'
+  SiReact,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiTypescript,
+  SiJavascript,
+  SiAngular,
+  SiVuedotjs,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiRedis,
+  SiGit,
+  SiDocker,
+  SiPostman,
+  SiVercel,
+  SiGithub,
+  SiMysql,
+  SiRender,
+} from "react-icons/si";
 
 const techGroups = [
   {
@@ -14,10 +30,12 @@ const techGroups = [
     color: "#61DAFB",
     techs: [
       { name: "React.js", icon: SiReact, color: "#61DAFB" },
+      { name: "Next.js", icon: SiNextdotjs, color: "#ffffff" },
+      { name: "Vue.js", icon: SiVuedotjs, color: "#4FC08D" },
+      { name: "Angular.js", icon: SiAngular, color: "#DD0031" },
       { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
       { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
       { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
-      { name: "Next.js", icon: SiNextdotjs, color: "#ffffff" },
     ],
   },
   {
@@ -27,6 +45,8 @@ const techGroups = [
       { name: "Node.js", icon: SiNodedotjs, color: "#68A063" },
       { name: "Express.js", icon: SiExpress, color: "#ffffff" },
       { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+      { name: "Redis", icon: SiRedis, color: "#DC382D" },
+      { name: "Microservices", icon: SiNodedotjs, color: "#7C3AED" },
       { name: "SQL", icon: SiMysql, color: "#DC382D" },
     ],
   },
@@ -34,19 +54,20 @@ const techGroups = [
     label: "Tools & DevOps",
     color: "#F05033",
     techs: [
-      { name: "Git", icon: SiGit, color: "#F05033" },
-      { name: "GitHub", icon: SiGithub, color: "#ffffff" },
+      { name: "AWS", icon: FaAws, color: "#FF9900" },
       { name: "Docker", icon: SiDocker, color: "#2496ED" },
-      { name: "Postman", icon: SiPostman, color: "#FF6C37" },
       { name: "Vercel", icon: SiVercel, color: "#ffffff" },
       { name: "Render", icon: SiRender, color: "#ffffff" },
+      { name: "Git", icon: SiGit, color: "#F05033" },
+      { name: "GitHub", icon: SiGithub, color: "#ffffff" },
+      { name: "Postman", icon: SiPostman, color: "#FF6C37" },
     ],
   },
 ];
 
 // Individual tech icon card — memoized to avoid re-renders
 const TechCard = memo(function TechCard({ tech, index }) {
-  const Icon = tech.icon
+  const Icon = tech.icon;
 
   return (
     <motion.div
@@ -66,12 +87,15 @@ const TechCard = memo(function TechCard({ tech, index }) {
         {tech.name}
       </span>
     </motion.div>
-  )
-})
+  );
+});
 
 function TechStack() {
-  const sectionRef = useSectionObserver('techstack')
-  const { ref: animRef, inView } = useInView({ triggerOnce: true, threshold: 0.1 })
+  const sectionRef = useSectionObserver("techstack");
+  const { ref: animRef, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
 
   return (
     <section
@@ -119,7 +143,7 @@ function TechStack() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
 
-export default TechStack
+export default TechStack;
